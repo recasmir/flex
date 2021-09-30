@@ -9,6 +9,9 @@
     .top{
         display: flex; 
     }
+    .top *{
+        color: #757575;
+    }
         .logo{
             background-color: #F5C6A5;
             flex: auto;
