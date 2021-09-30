@@ -60,3 +60,10 @@
     .copyright{
         background-color: #FFE1AF;
     }
+@media screen and (max-width: 800px) {
+    .info{
+        background-color: yellow;
+        flex-direction: column;
+    }
+
+}
