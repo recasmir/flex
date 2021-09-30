@@ -67,10 +67,7 @@
     }
 }
 @media screen and (max-width: 600px){
-    .top{
-        flex-direction: column;
-    }
-    .news{
+    .top, .news{
         flex-direction: column;
     }
     .adscard{
