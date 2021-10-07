@@ -1,86 +1,137 @@
 *{
     box-sizing: border-box;
-    margin:5px;
-    padding:5px; 
+    /* margin:5px; */
+    /* padding:5px;  */
 }
 .header{
     background-image: url("img/top-banner.jpg");
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
 }
     .top{
         display: flex; 
-    }
-    .top *{
         color: #757575;
+        height: 200px;
     }
         .logo{
-            background-color: #F5C6A5;
-            flex: auto;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
             .logo-japan{
-                width: 30%;
+                width: 40%;
             }
         .menu{
-            background-color: #F5C6A5;
-            flex: 50%;
+            flex: 5;
             display: flex;
+            align-items: center;
         }
-            .menu-items{
+            .menu-all{
                 font-family: 'Montserrat', sans-serif;
+                padding-right: 30px;
+                display: flex;
             }
-        .search{
-            background-color: #F5C6A5;
-            flex: auto;
+            .menu-items:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+            /* #inicio::before{
+                font-family:"Font Awesome 5 Free";
+                margin-right:8px;
+                content: "\f7be";
+            } */
+            
+            i{
+                padding-right: 10px;
+            }
+            .first-icon{
+                padding-left: 50px;
+            }
+        
+        .social{
+            flex: 1;
             display: flex;
             flex-direction: column;
+            justify-content: space-evenly;
         }
     .banner{
-        background-color: #C996CC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            background-color: rgb(128,128,128,0.2);
+            margin: 0 30px;
     }
         h1{
-            background-color: #F5C6A5;
+            color: rgba(255, 0, 0, 0.4);
+            font-size: 2.5rem;
+            margin-top: 0;
+            text-align: center;
+        }
+        blockquote {
+            margin: 0;
+            }
+                 
+        blockquote h1:before { 
+            content: open-quote;
+            font-weight: bold;
+            font-size:100px;
+            color: rgba(255, 0, 0, 0.4);
+        } 
+        blockquote h1:after { 
+            content: close-quote;
+            font-weight: bold;
+            font-size:100px;
+            color: rgba(255, 0, 0, 0.4);
         }
 .info{
-    background-color: black;
+    background-color: rgba(128,128,128, 0.5);
     display: flex;
 }
     .news{
-        background-color: #1C0C5B;
-        flex: 2;
-        display: flex;
-        flex-flow: row wrap;
+        /* background-color: #1C0C5B; */
+        margin: 10px 10px 0 10px;
     }
-        .newscard{
-            background-color: #F0A500;
-            flex: 40%;
+        .img-banner{
+            max-width: 100%;
+            height: auto;
+            border-style: solid solid none solid;
+            border-color: rgb(220,220,220);
+            border-width: 10px;
         }
-        .newsbanner{
-            background-color: #C6D57E;
-            flex: 100%;
-        }
-    .ads{
-        background-color: #D57E7E;
-        flex: 1;
-    }
-        .adscard{
-            background-color: #A2CDCD;
-        }
-.footer{
-    background-color: black;
-}
-    .copyright{
-        background-color: #FFE1AF;
-    }
 @media screen and (max-width: 800px) {
-    .info{
-        background-color: yellow;
-        flex-direction: column;
-    }
-}
-@media screen and (max-width: 600px){
     .top, .news{
         flex-direction: column;
     }
-    .adscard{
-        background-color:teal;
+    .logo-japan{
+        width: 20%;
     }
+    .info{
+        flex-direction: column;
+    }
+    blockquote h1:before, blockquote h1:after { 
+        font-size:80px;
+    }
+    .social{
+        flex-direction: row;
+        justify-content: flex-end;
+        padding-bottom: 10px;
+    }
+}
+@media screen and (max-width: 600px){
+
+    .menu{
+        flex-wrap: wrap;
+    }
+
+    .first-icon{
+        padding-left: 0;
+    }
+    blockquote h1:before, blockquote h1:after { 
+        font-size:50px;
+    }
+ 
 }
