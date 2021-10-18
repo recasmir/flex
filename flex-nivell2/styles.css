@@ -21,9 +21,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: logo 3s ease-in;
+        
         }
             .logo-japan{
-                width: 40%;
+                width: 100px;
+                min-width: 50px;
+            }
+            .logo-japan:hover{
+                cursor: pointer;
             }
         .menu{
             flex: 5;
@@ -56,6 +62,10 @@
             display: flex;
             align-items: center;
         }
+        .fa-facebook-square:hover, .fa-twitter:hover{
+            cursor: pointer;
+            color:rgba(255, 0, 0, 0.4)
+        }
     .banner{
             display: flex;
             align-items: center;
@@ -70,6 +80,7 @@
             margin-top: 0;
             text-align: center;
             font-family: 'Times New Roman', Times, serif;
+            animation: title 3s ease-in;
         }
         blockquote {
             margin: 0;
@@ -87,23 +98,10 @@
             font-size:50px;
             color: rgba(255, 0, 0, 0.4);
         }
-/* .info{
-    background-color: rgba(128,128,128, 0.5);
-    display: flex;
-}
-    .news{
-        background-color: #1C0C5B;
-        margin: 10px 10px 0 10px;
-    }
-        .img-banner{
-            max-width: 100%;
-            height: auto;
-            border-style: solid solid none solid;
-            border-color: rgb(220,220,220);
-            border-width: 10px;
-        } */
 article{
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 .info{
     background-color: rgba(189, 195, 199, 1);
@@ -111,21 +109,68 @@ article{
     flex: 3;
 }
     .news{
-        background-color: rgba(238, 238, 238, 1);
+        background-color: rgba(189, 195, 199, 1);
         flex: 3;
         display: flex;
         flex-flow: row wrap;
+        margin: 0;
+        padding: 0;
     }
         .newscard{
-            background-color: #F0A500;
+            background-color: rgba(238, 238, 238, 1);
             flex: 40%;
+            padding: 10px;
+        }
+        .img-banner{
+            max-width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
+        .photocard{
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+        .datecard{
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #F0A500;
+        }
+        .titlecard{
+            background-color: #f08080;
+            color: rgba(238, 238, 238, 1);
+            letter-spacing: 2px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .textcard{
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+            margin: 0;
+            padding: 5px 0 0 0;
+        }
+        .readmore{
+            color: rgba(189, 195, 199, 1);
+            margin: 0;
+            padding: 0;
+        }
+        .readmore:hover{
+            cursor: pointer;
+            text-decoration: underline;
         }
         .newsbanner{
-            background-color: #C6D57E;
             flex: 100%;
         }
+        .newsbanner p{
+            text-align: center;
+        }
+
 .ads{
-    background-color: #A2CDCD;
+    background-color: rgba(189, 195, 199, 1);
     flex: 1;
 }
     .adscard{
@@ -136,13 +181,16 @@ article{
     }
 
 .footer{
-    background-color: black;
+    background-color:  rgba(238, 238, 238, 1);
 }
     .copyright{
-        background-color: #FFE1AF;
+        text-align: center;
     }
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
     .top, .news{
+        flex-direction: column;
+    }
+    .news{
         flex-direction: column;
     }
     .logo-japan{
@@ -161,6 +209,12 @@ article{
     }
 }
 @media screen and (max-width: 600px){
+    .top, .news{
+        flex-direction: column;
+    }
+    .info{
+        flex-direction: column;
+    }
 
     .menu{
         flex-wrap: wrap;
@@ -173,4 +227,55 @@ article{
         font-size:50px;
     }
  
+} */
+@media screen and (max-width: 1050px) {
+    .top{
+        flex-direction: column;
+        position: relative;
+    }
+    .first-icon{
+        padding-left: 0;
+    }
+    .menu{
+        flex-wrap: wrap;
+    }
+
+    article{
+        flex-direction: column;
+    }
+    .news{
+        flex-direction: column;
+    }
+    
+}
+@media screen and (max-width: 800px) {
+    .textcard{
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        margin: 0;
+        padding: 5px 0 0 0;
+    }
+  
+}
+@media screen and (max-width: 600px){
+    .top{
+        flex-direction: column;
+    }
+}
+@keyframes logo{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes title{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
