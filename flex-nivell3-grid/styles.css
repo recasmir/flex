@@ -4,250 +4,216 @@
     padding:5px; 
     font-family: 'Montserrat', sans-serif;
 }
-/*areas' names*/
-.logo{
-    grid-area: logo;
+/*area names*/
+header{
+    grid-area: header;
 }
-.menu{
-    grid-area: menu;
-}
-.social{
-    grid-area: social;
-}
-.news{
+section{
     grid-area: news;
 }
-.newsbanner{
-    grid-area: newsbanner;
-}
-.ads{
+aside{
     grid-area: ads;
 }
-.footer{
+footer{
     grid-area: footer;
 }
-
+#logo{
+    grid-area: logo;
+}
+#menu{
+    grid-area: menu;
+}
+#social{
+    grid-area: social;
+}
+#banner{
+    grid-area: banner;
+}
+#newscard-1{
+    grid-area: newscard-1;
+}
+#newscard-2{
+    grid-area: newscard-2;
+}
+#newscard-3{
+    grid-area: newscard-3;
+}
+#newscard-4{
+    grid-area: newscard-4;
+}
+#newsbanner{
+    grid-area: newsbanner;
+}
 /*template*/
 main{
     display: grid;
-    grid-template-areas:
-        "logo menu menu social"
-        "banner banner banner banner"
+    grid-template-areas: 
+        "header header header header"
         "news news news ads"
-        "newsbanner newsbanner newsbanner ads"
-        "footer footer footer footer";
-    grid-template-columns: 1fr 2fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr 4fr 1fr 1fr;
+        "footer footer footer footer"
+        ;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat (3, auto);
+    grid-gap: 5px;
     }
-
-/* .header{
+header{
+    display: grid;
+    grid-template-areas: 
+        "logo menu social"
+        "banner banner banner";
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-gap: 5px;
     background-image: url("img/top-banner.jpg");
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 20px;
+    background-position: center;    
 }
-    .top{
-        display: flex; 
-        color: #757575;
-        min-height: 200px;
-        flex-wrap: wrap;
-    }
-        .logo{
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: logo 3s ease-in;
-        
-        }
-            .logo-japan{
-                width: 100px;
-                min-width: 50px;
-            }
-            .logo-japan:hover{
-                cursor: pointer;
-            }
-        .menu{
-            flex: 5;
-            display: flex;
-            align-items: center;
-        }
-            .menu-all{
-                padding-right: 30px;
-                display: flex;
-            }
-            .menu-items:hover{
-                cursor: pointer;
-                text-decoration: underline;
-            }
-            
-            i{
-                padding-right: 10px;
-            }
-            .first-icon{
-                padding-left: 50px;
-            }
-        
-        .social{
-            flex: 1;
-            display: flex;
-            align-items: center;
-        }
-        .fa-facebook-square:hover, .fa-twitter:hover{
-            cursor: pointer;
-            color:rgba(255, 0, 0, 0.4)
-        }
-    .banner{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 200px;
-            background-color: rgb(128,128,128,0.2);
-            margin: 0 30px;
-    }
-        h1{
-            color: rgba(255, 0, 0, 0.4);
-            font-size: 2.5rem;
-            margin-top: 0;
-            text-align: center;
-            font-family: 'Times New Roman', Times, serif;
-            animation: title 3s ease-in;
-        }
-        blockquote {
-            margin: 0;
-            }
-                 
-        blockquote h1:before { 
-            content: open-quote;
-            font-weight: bold;
-            font-size:50px;
-            color: rgba(255, 0, 0, 0.4);
-        } 
-        blockquote h1:after { 
-            content: close-quote;
-            font-weight: bold;
-            font-size:50px;
-            color: rgba(255, 0, 0, 0.4);
-        }
-article{
+section{
+    display: grid;
+    grid-template-areas: 
+        "newscard-1 newscard-2"
+        "newscard-3 newscard-4"
+        "newsbanner newsbanner";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 5px;
+}
+/*body*/
+main>*{
+    background-color: rgba(189, 195, 199, 1);
+} 
+#top{
+    color: #757575;
+    align-items: center;
+}
+#logo{
     display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.logo-japan{
+    width: 100px;
+    min-width: 50px;
+    animation: logo 3s ease-in;
+}
+.logo-japan:hover{
+    cursor: pointer;
+}
+#menu{
+    display: flex;
+}
+.menu-all{
+    padding-right: 30px;
+    display: flex;
+}
+.menu-items:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+i{
+    padding-right: 10px;
+}
+.first-icon{
+    padding-left: 50px;
+}
+.social{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.fa-facebook-square:hover, .fa-twitter:hover{
+    cursor: pointer;
+    color:rgba(255, 0, 0, 0.4)
+}
+#banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    background-color: rgb(128,128,128,0.2);
+    margin: 0 30px;
+}
+h1{
+    color: rgba(255, 0, 0, 0.4);
+    font-size: 2.5rem;
+    padding-top: 40px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    animation: title 3s ease-in;
+}
+blockquote {
+    margin: 0;
+    }        
+blockquote h1:before { 
+    content: open-quote;
+    font-weight: bold;
+    font-size:50px;
+    color: rgba(255, 0, 0, 0.4);
+} 
+blockquote h1:after { 
+    content: close-quote;
+    font-weight: bold;
+    font-size:50px;
+    color: rgba(255, 0, 0, 0.4);
+}
+.newscard{
+    background-color: rgba(238, 238, 238, 1);
+    flex: 40%;
+    padding: 10px;
+}
+.img-banner{
+    max-width: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
 }
-.info{
-    background-color: rgba(189, 195, 199, 1);
-    display: flex;
-    flex: 3;
+.photocard{
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
-    .news{
-        background-color: rgba(189, 195, 199, 1);
-        flex: 3;
-        display: flex;
-        flex-flow: row wrap;
-        margin: 0;
-        padding: 0;
-    }
-        .newscard{
-            background-color: rgba(238, 238, 238, 1);
-            flex: 40%;
-            padding: 10px;
-        }
-        .img-banner{
-            max-width: 100%;
-            height: auto;
-            margin: 0;
-            padding: 0;
-        }
-        .photocard{
-            position: relative;
-            margin: 0;
-            padding: 0;
-        }
-        .datecard{
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: #F0A500;
-        }
-        .titlecard{
-            background-color: #f08080;
-            color: rgba(238, 238, 238, 1);
-            letter-spacing: 2px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .textcard{
-            -webkit-column-count: 2;
-            -moz-column-count: 2;
-            column-count: 2;
-            margin: 0;
-            padding: 5px 0 0 0;
-        }
-        .readmore{
-            color: rgba(189, 195, 199, 1);
-            margin: 0;
-            padding: 0;
-        }
-        .readmore:hover{
-            cursor: pointer;
-            text-decoration: underline;
-        }
-        .newsbanner{
-            flex: 100%;
-        }
-        .newsbanner p{
-            text-align: center;
-        }
-.ads{
-    background-color: rgba(189, 195, 199, 1);
-    flex: 1;
+.datecard{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #F0A500;
 }
-    .adscard{
-        background-color: rgba(189, 195, 199, 1);
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-.footer{
+.titlecard{
+    background-color: #f08080;
+    color: rgba(238, 238, 238, 1);
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+}
+.textcard{
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    margin: 0;
+    padding: 5px 0 0 0;
+}
+.readmore{
+    color: rgba(189, 195, 199, 1);
+    margin: 0;
+    padding: 0;
+}
+.readmore:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+#newsbanner p{
+    text-align: center;
+}
+aside{
+    text-align: center;
+}
+footer{
     background-color:  rgba(238, 238, 238, 1);
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
-    .copyright{
-        text-align: center;
-    }
-@media screen and (max-width: 930px) {
-    .header{
-        flex-direction: column;
-    }
-    .first-icon{
-        padding-left: 0;
-    }
-
-    .menu{
-        flex-wrap: wrap;
-    }
-    .menu-all{
-        margin: 0;
-        padding: 0;
-    }
-
-    article{
-        flex-direction: column;
-    }
-}
-@media screen and (max-width: 800px) {
-    .top{
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-    .social{
-        margin-bottom: 50px;
-    }
-    .menu{
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
+/*Keyframes*/
 @keyframes logo{
     0%{
         opacity: 0;
@@ -263,4 +229,65 @@ article{
     100%{
         opacity: 1;
     }
-} */
+}
+/*Media Queries*/
+@media screen and (max-width: 1200px) {
+    main{
+        display: grid;
+        grid-template-areas: 
+            "header header header header"
+            "news news news news"
+            "ads ads ads ads"
+            "footer footer footer footer"
+            ;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat (4, auto);
+        }
+}
+
+@media screen and (max-width: 1110px) {
+    header{
+        display: grid;
+        grid-template-areas: 
+            "logo menu"
+            "social social"
+            "banner banner" ;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, auto);
+    }
+    #menu{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header{
+        display: grid;
+        grid-template-areas: 
+            "logo" 
+            "menu"
+            "social" 
+            "banner" ;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(4, auto);
+    }
+    section{
+        display: grid;
+        grid-template-areas: 
+            "newscard-1" 
+            "newscard-2"
+            "newscard-3" 
+            "newscard-4"
+            "newsbanner";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+    }
+    .menu-all{
+        margin: 0;
+        padding: 0;
+    }
+    #social{
+        margin-bottom: 50px;
+    }
+}
